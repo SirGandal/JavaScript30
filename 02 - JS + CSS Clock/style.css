@@ -48,6 +48,16 @@ html {
       transition-timing-function: cubic-bezier(0, 3, 0.6, 1);
     }
 
+    .hour-hand {
+      width: 34%;
+      left: 17%;
+    }
+
+    .second-hand {
+      height: 4px;
+      background: darkorange;
+    }
+
     .no-transition {
       transition: none;
     }
