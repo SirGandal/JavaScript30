@@ -2,6 +2,7 @@ window.onload = () => {
     const secondHand = document.querySelector('.second-hand');
     const minHand = document.querySelector('.min-hand');
     const hourHand = document.querySelector('.hour-hand');
+    arrangeNumbersOnClock();
     function setDate() {
         const now = new Date();
         // get seconds returns the seconds of the current minute
@@ -22,6 +23,9 @@ window.onload = () => {
     }
     setInterval(setDate, 1000);
 };
+window.onresize = () => {
+    arrangeNumbersOnClock();
+};
 // Checks if the hand has complete an entire rotation, if so removes the transition to avoid glitch
 function resetTransition(element, handDegrees) {
     if (handDegrees === 90) {
@@ -29,5 +33,21 @@ function resetTransition(element, handDegrees) {
     }
     else if (element.classList.contains('no-transition')) {
         element.classList.remove('no-transition');
+    }
+}
+function arrangeNumbersOnClock() {
+    const numbers = document.querySelectorAll('.number');
+    const numbersContainer = document.querySelector('.clock-face');
+    const numbersContainerWidth = numbersContainer.clientWidth;
+    const numbersContainerHeight = numbersContainer.clientHeight;
+    var radius = numbersContainerHeight / 2;
+    var angle = 0;
+    var step = (2 * Math.PI) / numbers.length;
+    for (var numberIndex = 0; numberIndex < numbers.length; numberIndex++) {
+        var x = Math.round(numbersContainerWidth / 2 + radius * Math.cos(angle) - numbers[numberIndex].clientWidth / 2);
+        var y = Math.round(numbersContainerHeight / 2 + radius * Math.sin(angle) - numbers[numberIndex].clientHeight / 2);
+        numbers[numberIndex].style.left = `${x}px`;
+        numbers[numberIndex].style.top = `${y}px`;
+        angle += step;
     }
 }
