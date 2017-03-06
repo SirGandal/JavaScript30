@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Array Cardio 💪</title>
+    <meta charset="UTF-8">
+    <title>Array Cardio 💪</title>
 </head>
+
 <body>
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-  <link rel="stylesheet" href="style.css">
-  <script type='text/javascript' src='index.js'></script>
+    <script type='text/javascript' src='index.js'></script>
+
+    <p> Filter the list of inventors for those who were born in the 1500's
+        <input type="button" value="Do it!" onclick="answerChallenge1();" /></p>
+<p> Give us an array of the inventors' first and last names
+    <input type="button" value="Here there are..." onclick="answerChallenge2();"/></p>
+<p> Sort the inventors by birthdate, oldest to youngest
+    <input type="button" value="Happy birthday!" onclick="answerChallenge3();"/></p>
+<p> How many years did all the inventors live?
+    <input type="button" value="Sum it all" onclick="answerChallenge4();"/></p>
+<p> Sort the inventors by years lived
+    <input type="button" value="Sort them all" onclick="answerChallenge5();"/></p>
+<p> Sort the people alphabetically by last name
+    <input type="button" value="A-Za-z" onclick="answerChallenge7();"/></p>
+<p> Sum up the instances of each of these transportations
+    <input type="button" value="Reduce" onclick="answerChallenge8();"/></p>
+<p> Reset inventors
+    <input type="button" value="Reset Inventors" onclick="resetInventors();" /></p>
+<p> Reset people
+    <input type="button" value="Reset People" onclick="resetPeople();" /></p>
+<p> Reset transportations
+    <input type="button" value="Reset Transportations" onclick="resetTransportations();" /></p>
+<div id="inventors" style="height: 220px;"> </div>
+
+<div id="people"> </div>
+
+<div id="transportations"> </div>
+
 </body>
+
 </html>
